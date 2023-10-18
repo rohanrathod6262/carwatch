@@ -25,7 +25,7 @@ export default function App() {
       setIsAppFirstLaunched(false);
     }
 
-    AsyncStorage.removeItem('isAppFirstLaunched');
+    // AsyncStorage.removeItem('isAppFirstLaunched');
   }, []);
 
 
