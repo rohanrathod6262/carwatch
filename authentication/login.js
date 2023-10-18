@@ -9,8 +9,7 @@ const Login = ({ navigation }) => {
         navigation.navigate('PasswordSetup');
     };
     const login = () => {
-        const url = 'https://www.google.com';
-        Linking.openURL(url);
+        navigation.navigate('Home');
     };
     const signup = () => {
         navigation.navigate('SignUp');
