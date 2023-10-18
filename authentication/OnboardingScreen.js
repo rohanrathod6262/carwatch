@@ -13,26 +13,26 @@ import {
 
 const {width, height} = Dimensions.get('window');
 
-const COLORS = {primary: '#282534', white: '#fff'};
+const COLORS = {primary: '#fff', white: '#fff'};
 
 const slides = [
   {
     id: '1',
     image: require('../assets/onboard1.png'),
-    title: 'Best Digital Solution',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Put the QR in your car or bike',
+    subtitle: 'Anybody can scan the QR and securely contact you.',
   },
   {
     id: '2',
     image: require('../assets/onboard2.png'),
-    title: 'Achieve Your Goals',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Get alerts anywhere',
+    subtitle: 'You can be anywhere to recieve the notification.',
   },
   {
     id: '3',
     image: require('../assets/onboard3.png'),
-    title: 'Increase Your Value',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Mobile number safety',
+    subtitle: 'You can choose if you want to get call or just alert.',
   },
 ];
 
@@ -113,7 +113,7 @@ const OnboardingScreen = ({navigation}) => {
               <TouchableOpacity
                 style={styles.btn}
                 onPress={() => navigation.replace('Splash')}>
-                <Text style={{fontWeight: 'bold', fontSize: 15}}>
+                <Text style={{fontWeight: 'bold', fontSize: 15 , color: COLORS.white,}}>
                   GET STARTED
                 </Text>
               </TouchableOpacity>
@@ -125,9 +125,9 @@ const OnboardingScreen = ({navigation}) => {
                 style={[
                   styles.btn,
                   {
-                    borderColor: COLORS.white,
-                    borderWidth: 1,
-                    backgroundColor: 'transparent',
+                    // borderColor: COLORS.black,
+                    // borderWidth: 1,
+                    backgroundColor: '#613EEA',
                   },
                 ]}
                 onPress={skip}>
@@ -149,6 +149,7 @@ const OnboardingScreen = ({navigation}) => {
                   style={{
                     fontWeight: 'bold',
                     fontSize: 15,
+                    color: COLORS.white,
                   }}>
                   NEXT
                 </Text>
@@ -180,7 +181,7 @@ const OnboardingScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   subtitle: {
-    color: COLORS.white,
+    color: COLORS.black,
     fontSize: 13,
     marginTop: 10,
     maxWidth: '70%',
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
     lineHeight: 23,
   },
   title: {
-    color: COLORS.white,
+    color: COLORS.black,
     fontSize: 22,
     fontWeight: 'bold',
     marginTop: 20,
@@ -210,7 +211,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     borderRadius: 5,
-    backgroundColor: '#fff',
+    color:COLORS.white,
+    backgroundColor: '#613EEA',
     justifyContent: 'center',
     alignItems: 'center',
   },

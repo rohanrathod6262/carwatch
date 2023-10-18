@@ -24,6 +24,8 @@ export default function App() {
 
     AsyncStorage.removeItem('isAppFirstLaunched');
   }, []);
+
+
   const Stack = createStackNavigator();
 
   return (
@@ -40,6 +42,8 @@ export default function App() {
     //     <Stack.Screen name="PasswordSetup" component={PasswordSetup} options={{ headerShown: false }} />
     //   </Stack.Navigator>
     // </NavigationContainer>
+
+    
     isAppFirstLaunched != null && (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
