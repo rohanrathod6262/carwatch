@@ -69,13 +69,13 @@ export default function App() {
 
     isAppFirstLaunched != null && (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {isAppFirstLaunched && (
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Splash'>
+          
             <Stack.Screen
               name="OnboardingScreen"
               component={OnboardingScreen}
             />
-          )}
+          
           <Stack.Screen
             options={{
               headerShown: false,
