@@ -1,16 +1,29 @@
 import React, { useState ,useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, Linking, TouchableOpacity ,Alert  } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const Splash = ({ navigation }) => {
+    useEffect( async() => {
+        async function getAppData(){
+            let appData = await AsyncStorage.getItem('isAppFirstLaunched');
+              try {
+                const timer = setTimeout(() => {
+                    if(appData==null){
+                        navigation.navigate('OnboardingScreen');
+        
+                    }else{
+                        navigation.navigate('Login');
+        
+                    }
+                  }, 3000);
+              } catch (error) {
+                console.log(error);
+              }
+          
+             clearTimeout(timer);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            navigation.navigate('OnboardingScreen');
-          }, 3000);
-      
-          return () => clearTimeout(timer);
       }, [navigation]);
 
 
