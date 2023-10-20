@@ -24,10 +24,6 @@ const Splash = ({ navigation }) => {
           
              clearTimeout(timer);
 
-        }
-       getAppData();
-
-        
       }, [navigation]);
 
 

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, Linking, TouchableOpacity } from 'react-native';
 import Footer from './footer';
 import { FAB, Card, Title, Button, Paragraph } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = ({ navigation }) => {
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>My vehicles</Text>
@@ -24,14 +26,14 @@ const Home = ({ navigation }) => {
             </View>
             <Image
                 source={require("../assets/house.png")}
-                style={styles.house}
+                style={styles.image}
             />
             <FAB
                 style={styles.fab}
                 icon="plus"
                 color="white"
                 onPress={() => {
-
+                    navigation.navigate("AddNewCar");
                 }}
             />
             <Footer/>
@@ -50,10 +52,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     carcontainer: {
-        height: 600,
+        height: '80%',
         width: 300,
     },
-    house: {
+    image: {
         width: 400,
         height: 300,
         position: 'absolute',
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     },
     card: {
         margin: 16,
-        width: 360,
+        width: '100%',
         height: 200,
         elevation: 5,
         backgroundColor: 'white',
