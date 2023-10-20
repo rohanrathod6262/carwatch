@@ -13,6 +13,8 @@ import Home from './component/home';
 import OnboardingScreen from './authentication/OnboardingScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Footer from './component/footer';
+import AddNewCar from './component/AddNewCar';
+
 
 export default function App() {
   
@@ -65,6 +67,8 @@ export default function App() {
           <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
           <Stack.Screen name="OtpVerification" component={OtpVerification} options={{ headerShown: false }} />
           <Stack.Screen name="PasswordSetup" component={PasswordSetup} options={{ headerShown: false }} />
+          <Stack.Screen name="AddNewCar" component={AddNewCar}  />
+
         </Stack.Navigator>
       </NavigationContainer>
     )
